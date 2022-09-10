@@ -14,7 +14,7 @@
 
 ## 封面
 
-封面的照片是我的两个柯基，$\beta$ 和 $\alpha$. 
+封面的照片是我的两个柯基，贝塔 和 阿尔法. 
 
 它们有自己的网站 [betalpha.run](https://betalpha.run)
 
