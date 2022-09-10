@@ -1,0 +1,58 @@
+\documentclass[11pt,green,twocol,citestyle=authoryear-comp, bibstyle=authoryear]{elegantbook}
+
+%\documentclass[pad]{elegantbook}
+
+\title{Academic Notes Series: No. 1}
+\subtitle{Financial Decisions and Markets: A Course for Asset Pricing}
+
+\author{Hang Cheng}
+\institute{School of Finthch \& DUFE}
+\date{\today}
+\version{0.1}
+\bioinfo{Website}{chenghang.work}
+
+\extrainfo{Work Hard, Study Hard.}
+
+\logo{LOGO.png}
+\cover{cover.jpg}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+
+\begin{document}
+
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+\chapter*{Introduction}
+\markboth{Introduction}{Introduction}
+This is academic note for \cite{Campbell_2017} and this project is beginning from September 10, 2022.
+
+
+\chapter{Choice under Uncertainty}
+
+\begin{introduction}
+\item first 
+\end{introduction}
+
+
+\printbibliography[heading=bibintoc, title=\ebibname]
+
+
+\appendix
+
+
+\chapter{Nothing}
+
+
+
+
+\end{document}
