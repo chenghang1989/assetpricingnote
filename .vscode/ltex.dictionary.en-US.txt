@@ -7,3 +7,4 @@ riskfree
 nontraded
 Sharpe-Lintner
 riskless
+undiversified

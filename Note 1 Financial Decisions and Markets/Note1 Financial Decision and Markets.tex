@@ -167,7 +167,7 @@ the intercept $ \alpha_i $ should be $ 0 $ for all assets. $ \alpha_i $ is calle
 
 \subsection{Beta Pricing and Portfolio Choice}
 
-\begin{exercise}
+\begin{problem}
     Assume that the Sharpe-Lintner CAPM holds, so the mean-variance efficient frontier consists of combinations of Treasury bills and the market portfolio. Nonetheless, some households make the mistake of holding undiversified portfolios that contain only one stock or a few stocks. (Empirical evidence on such behavior is discussed in Chapter 10.)
     \begin{enumerate}
         \item Show that the Sharpe ratio of any portfolio divided by the Sharpe ratio of the market
@@ -176,10 +176,22 @@ the intercept $ \alpha_i $ should be $ 0 $ for all assets. $ \alpha_i $ is calle
         in the market increases. What is the Sharpe ratio of an equally-weighted portfolio
         that contains N stocks divided by the Sharpe ratio of the market portfolio? Interpret.
     \end{enumerate}
-\end{exercise}
+\end{problem}
 
 \begin{solution}
 \begin{enumerate}
+    \item The Sharpe ratio of portfolio $ p $ divided by the Sharpe ratio of the market portfolio equals to
+    \begin{equation*}
+        \begin{aligned}
+            &\frac{E\left(R_p-R_f\right)}{\sigma\left(R_p\right)} / \frac{E\left(R_m-R_f\right)}{\sigma\left(R_m\right)} \\
+            &=\frac{\beta_{p m} E\left(R_m-R_f\right)}{\sigma\left(R_p\right)} / \frac{E\left(R_m-R_f\right)}{\sigma\left(R_m\right)} \\
+            &=\frac{\beta_{p m} \sigma\left(R_m\right)}{\sigma\left(R_p\right)} \\
+            &=\frac{\operatorname{cov}\left(R_p \cdot R_m\right) \cdot \sigma\left(R_m\right)}{\operatorname{Var}\left(R_m\right) \cdot \sigma\left(R_p\right)} \\
+            &=\frac{\rho \sigma\left(R_p\right) \sigma\left(R_m\right) \cdot \sigma\left(R_m\right)}{\operatorname{Var}\left(R_m\right) \cdot \sigma\left(R_p\right)}\\
+            &=\rho
+        \end{aligned}
+    \end{equation*}
+    where $ \rho $ is the correlation coefficient between portfolio $ r_p $ and $ r_m $.   
     \item 
 \end{enumerate}
 \end{solution}
