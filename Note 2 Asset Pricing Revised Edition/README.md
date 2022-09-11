@@ -3,18 +3,14 @@
 
 [Homepage](https://chenghang.work) | [Github](https://github.com/chenghang1989) | 
 
+
 -------
 
-# 资产定价学术笔记  系列 
+# 资产定价学术笔记：系列 2 Academic Notes for Asset Pricing: Series 1
 
-该笔记是资产定价学术笔记的系列. 
+该笔记是资产定价学术笔记的系列 2. 
 
-其中对应的教材和文献是：
-
-1. 引用的教材是 [John Y. Campbell](https://scholar.harvard.edu/campbell) 的 **Financial Decisions and Markets**: *A Course in Asset Pricing*.
-2. 引用的教材是 [John H. Cochrane](https://faculty.chicagobooth.edu/john.cochrane/)的 **Asset Pricing: Revised Edition**.
-
-
+引用的教材是 [John H. Cochrane](https://faculty.chicagobooth.edu/john.cochrane/)的 **Asset Pricing: Revised Edition**.
 
 ## 封面
 

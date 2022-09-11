@@ -1,3 +1,9 @@
 Finthch
 DUFE
 chenghang
+CAPM
+covariances
+riskfree
+nontraded
+Sharpe-Lintner
+riskless

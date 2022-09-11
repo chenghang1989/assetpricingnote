@@ -1,0 +1,212 @@
+\documentclass[11pt,green,twocol,citestyle=authoryear, bibstyle=authoryear]{elegantbook}
+
+%\documentclass[pad]{elegantbook}
+
+\title{Academic Notes Series: No. 1}
+\subtitle{Financial Decisions and Markets: A Course for Asset Pricing}
+
+\author{Hang Cheng}
+\institute{School of Finthch \& DUFE}
+\date{\today}
+\version{0.1}
+\bioinfo{Website}{chenghang.work}
+
+\extrainfo{Work Hard, Study Hard.}
+
+\logo{LOGO.png}
+\cover{cover.jpg}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+
+\begin{document}
+
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+\chapter*{Introduction}
+\markboth{Introduction}{Introduction}
+This is academic note for \cite{Campbell_2017} and this project is beginning from September 10, 2022.
+
+
+\chapter{Choice under Uncertainty}
+
+\begin{introduction}
+\item Expected Utility 
+\end{introduction}
+
+This chapter review the basic theory of choice under Uncertainty, ignoring time by assuming that all Uncertainty is resolved at a single future data. 
+
+Related Literature:
+
+\begin{itemize}
+    \item \cite{Gollier_2001}
+    \item \cite{Ingersoll_1987}
+\end{itemize}
+
+\section{Expected Utility}
+
+\begin{proposition}
+    \begin{itemize}
+        \item An ordinal utility function $ \Upsilon(.) $ tells you that an agent is indifferent between $ x $ and $ y $ if $ \Upsilon(x)=\Upsilon(y) $  and prefers $ x $ to $ y $ if $ \Upsilon(x)>\Upsilon(y) $.   
+        \item For any strictly increasing function $ \Theta $, the preferences expressed by $ \Theta(\Upsilon(.)) $ are the same as those expressed by $ \Upsilon $. 
+    \end{itemize}
+\end{proposition}
+
+\chapter{Static Portfolio Choice}
+
+\chapter{Static Equilibrium Asset Pricing}
+
+\begin{introduction}
+    \item CAPM
+\end{introduction}
+
+\section{The Capital Asset Pricing Model (CAPM)}
+
+Some basic assumption:
+\begin{itemize}
+    \item All investors are price-takers
+    \item Evaluate portfolios using the means and variances of single-period returns
+    \item Investors have common beliefs about the means, variances, and covariances of returns.
+    \item There are no nontraded assets, taxes, or transactions costs.
+    \item Investors can borrow or lend at a given riskfree interest rate.
+\end{itemize}
+
+\begin{note}
+    The market portfolio is mean-variance efficient.
+\end{note}
+
+\subsection{Asset Pricing Implication of the Sharpe-Lintner CAPM}
+
+An increase in the weight of asset $ i $ in portfolio $ p $, $ \omega_i $, financed by a decrease in the weight on the riskless asset, affect the mean and variance of the return on portfolio $ p $ as follows:
+\begin{equation}\label{equ:3.1}
+    \begin{aligned}
+        &\overline{R}_p=\sum_i w_i\left(\overline{R_{i}}-R_f\right) \\
+        &\frac{d R_p }{d w_i}=\overline{R_i}-R_f
+        \end{aligned}
+\end{equation}  
+
+\begin{equation}\label{equ:3.2}
+    \frac{d \operatorname{Var}\left(R_p\right)}{d w_i}=2 \operatorname{Cov}\left(R_i, R_p\right)
+\end{equation} 
+
+\begin{proof}
+    The individual-asset variance and covariances in $ Var(R_p) $ are
+\begin{equation*}
+    Var(R_p)= 2 w_i w_1 \operatorname{Cov}\left(R_i, R_1\right)+\cdots+w_i^2 \operatorname{Var}\left(R_i\right)+\cdots+2 w_i w_N \operatorname{Cov}\left(R_i, R_N\right) 
+\end{equation*} 
+\begin{equation}\label{equ:3.3}
+       \frac{d \operatorname{Var}\left(R_p\right)}{d w_i} = 2 w_1 \operatorname{Cov}\left(R_i, R_1\right)+\cdots+2 w_i \operatorname{Var}\left(R_i\right) +\cdots+2 w_N \operatorname{Cov}\left(R_i, R_N\right)=2 \operatorname{Cov}\left(R_i, R_p\right)
+\end{equation}
+\end{proof}
+
+The ratio of the effect on mean, (\ref{equ:3.1}), to the effect on variance, (\ref{equ:3.2}) in
+\begin{equation}\label{equ:3.4}
+    \frac{d \bar{R}_p / d w_i}{d \operatorname{Var}\left(R_p\right) / d w_i}=\frac{\bar{R}_i-R_f}{2 \operatorname{Cov}\left(R_i, R_p\right)}
+\end{equation}
+
+\begin{proposition}
+    If portfolio $ p $  is mean-variance efficient, this ratio should be the same for all individual assets $ i $.
+\end{proposition}
+\begin{proof}
+    \begin{equation}\label{equ:3.5}
+        d \bar{R}_p=\left(\bar{R}_i-R_f\right) d w_i+\left(\bar{R}_j-R_f\right) d w_j
+    \end{equation}
+    and
+    \begin{equation}\label{equ:3.6}
+        d \operatorname{Var}\left(R_p\right)=2 \operatorname{Cov}\left(R_i, R_p\right) d w_i+2 \operatorname{Cov}\left(R_j, R_p\right) d w_j
+    \end{equation}
+    Now consider setting $ dw_j $ so that the mean portfolio return is unchanged, $ d\overline{R_p} = 0 $:
+    \begin{equation}\label{equ:3.7}
+        d w_j=-\frac{\left(\bar{R}_i-R_f\right)}{\left(\bar{R}_j-R_f\right)} d w_i
+    \end{equation}  
+    The portfolio variance must also be unchanged. We have
+    \begin{equation}\label{equ:3.8}
+        d \operatorname{Var}\left(R_p\right)=\left[2 \operatorname{Cov}\left(R_i, R_p\right)-2 \operatorname{Cov}\left(R_j, R_p\right) \frac{\left(\bar{R}_i-R_f\right)}{\left(\bar{R}_j-R_f\right)}\right] d w_i=0
+    \end{equation}
+    This requires
+    \begin{equation}\label{equ:3.9}
+        \frac{\bar{R}_i-R_f}{2 \operatorname{Cov}\left(R_i, R_p\right)}=\frac{\bar{R}_j-R_f}{2 \operatorname{Cov}\left(R_j, R_p\right)}
+    \end{equation}
+    This equation must hold for all assets $ j $ , including the original portfolio itself. Setting
+    $ j = p $, we get
+    \begin{equation}\label{equ:3.10}
+        \frac{\bar{R}_i-R_f}{2 \operatorname{Cov}\left(R_i, R_p\right)}=\frac{\bar{R}_p-R_f}{2 \operatorname{Var}\left(R_p\right)}
+    \end{equation}
+    or
+    \begin{equation}\label{equ:3.11}
+        \bar{R}_i-R_f=\frac{\operatorname{Cov}\left(R_i, R_p\right)}{\operatorname{Var}\left(R_p\right)}\left(\bar{R}_p-R_f\right)=\beta_{i p}\left(\bar{R}_p-R_f\right)
+    \end{equation}
+    where $ \beta_{i p} \equiv \operatorname{Cov}\left(R_i, R_p\right) / \operatorname{Var}\left(R_p\right) $ is the regression coefficient of asset $ i $'s return on portfolio $ p $'s return.
+\end{proof}
+
+The market portfolio $ m $ is mean-variance efficient. Under the restriction (\ref{equ:3.11}) describes the market portfolio:
+\begin{equation}\label{equ:3.12}
+    \bar{R}_i-R_f=\beta_{i m}\left(\bar{R}_m-R_f\right)
+\end{equation}
+The regression of excess return on the market excess return,
+\begin{equation}\label{equ:3.13}
+    R_{i t}-R_{f t}=\alpha_i+\beta_{i m}\left(R_{m t}-R_{f t}\right)+\epsilon_{i t}
+\end{equation}
+the intercept $ \alpha_i $ should be $ 0 $ for all assets. $ \alpha_i $ is called \textit{Jensen's alpha}.
+
+\subsection{The Black CAPM}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width = 0.6\textwidth]{blackcapm.pdf}
+    \caption{The Black (1972) CAPM}
+\end{figure}
+
+\subsection{Beta Pricing and Portfolio Choice}
+
+\begin{exercise}
+    Assume that the Sharpe-Lintner CAPM holds, so the mean-variance efficient frontier consists of combinations of Treasury bills and the market portfolio. Nonetheless, some households make the mistake of holding undiversified portfolios that contain only one stock or a few stocks. (Empirical evidence on such behavior is discussed in Chapter 10.)
+    \begin{enumerate}
+        \item Show that the Sharpe ratio of any portfolio divided by the Sharpe ratio of the market
+        portfolio equals the correlation of that portfolio with the market portfolio.
+        \item Suppose the market is made up of identical stocks, each of which has the same market capitalization, the same mean and variance of return, and the same correlation $ \rho > 0 $, with every other individual stock. Consider the limit as the number of stocks
+        in the market increases. What is the Sharpe ratio of an equally-weighted portfolio
+        that contains N stocks divided by the Sharpe ratio of the market portfolio? Interpret.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\begin{enumerate}
+    \item 
+\end{enumerate}
+\end{solution}
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{The Stochastic Discount Factor}
+
+
+\printbibliography[heading=bibintoc, title=\ebibname]
+
+
+\appendix
+
+
+\chapter{Nothing}
+
+
+
+
+\end{document}
