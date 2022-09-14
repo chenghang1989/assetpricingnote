@@ -136,7 +136,7 @@ The ratio of the effect on mean, (\ref{equ:3.1}), to the effect on variance, (\r
     \begin{equation}\label{equ:3.9}
         \frac{\bar{R}_i-R_f}{2 \operatorname{Cov}\left(R_i, R_p\right)}=\frac{\bar{R}_j-R_f}{2 \operatorname{Cov}\left(R_j, R_p\right)}
     \end{equation}
-    This equation must hold for all assets $ j $ , including the original portfolio itself. Setting
+    This equation must hold for all assets $ j $, including the original portfolio itself. Setting
     $ j = p $, we get
     \begin{equation}\label{equ:3.10}
         \frac{\bar{R}_i-R_f}{2 \operatorname{Cov}\left(R_i, R_p\right)}=\frac{\bar{R}_p-R_f}{2 \operatorname{Var}\left(R_p\right)}
@@ -192,12 +192,38 @@ the intercept $ \alpha_i $ should be $ 0 $ for all assets. $ \alpha_i $ is calle
         \end{aligned}
     \end{equation*}
     where $ \rho $ is the correlation coefficient between portfolio $ r_p $ and $ r_m $.   
-    \item 
+    \item The equal-weighted portfolio $ p $  contains $ N $ stocks. So the return and variance of this portfolio is 
+    \begin{equation*}
+        r_p=\frac{1}{N} r_1+\frac{1}{N} r_2+\ldots+\frac{1}{N} r_N=r
+    \end{equation*}  
+    \begin{equation*}
+        \begin{aligned}
+            &\begin{aligned}
+            &\sigma_p^2=\frac{1}{N^2} \sigma^2\left(r_1\right)+\frac{1}{N^2}\sigma^2\left(r_1\right)+\cdots \\
+            & + 2\frac{1}{N^2} \operatorname{cov}\left(r_1, r_2\right)+\cdots+2 \frac{1}{N^2} \operatorname{cov}\left(r_{N-1}, r_N\right)
+            \end{aligned}\\
+            &=\frac{1}{N} \sigma^2+\frac{2}{N^2} \cdot \frac{N-1}{2} \cdot N \cdot \rho \sigma^2\\
+            &=\frac{1}{N} \sigma^2+\frac{N-1}{N} \rho \sigma^2\\
+            &=\rho \sigma^2+\frac{1}{N} \sigma^2(1-\rho)
+            \end{aligned}
+    \end{equation*}
+    when $ N\rightarrow \infty  $, the variance of market portfolio is 
+    \begin{equation*}
+        \sigma ^2_{m} = \rho \sigma^2
+    \end{equation*} 
+    The Sharpe ratio's ratio is 
+    \begin{equation*}
+        \begin{aligned}
+            &\frac{\sqrt{\rho \sigma^2}}{\sqrt{\rho \sigma^2+\frac{1}{N} \sigma^2(1-\rho)}} \\
+            &=\sqrt{\frac{N \rho}{N \rho +1-\rho}}
+            \end{aligned}
+    \end{equation*}
 \end{enumerate}
 \end{solution}
 
+\subsection{The Black-Litterman Model}
 
-
+\section{Arbitrage Pricing and Multifactor Models}
 
 
 
