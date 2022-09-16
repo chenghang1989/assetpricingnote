@@ -221,17 +221,44 @@ the intercept $ \alpha_i $ should be $ 0 $ for all assets. $ \alpha_i $ is calle
 \end{enumerate}
 \end{solution}
 
-\subsection{The Black-Litterman Model}
-
 \section{Arbitrage Pricing and Multifactor Models}
 
+\subsection{Arbitrage Pricing in a Single-Factor Model}
 
+\begin{equation*}
+    \begin{aligned}
+        R_{i t}^e = \alpha_i+\beta_{i m} R_{m t}^e+\epsilon_{i t} \\
+        \mathrm{E}\left[\epsilon_{i t} \epsilon_{j t}\right]=0 \\
+        \operatorname{Cov}\left(R_{i t}^e, R_{j t}^e\right)=\beta_{i m} \beta_{j m} \sigma_m^2
+    \end{aligned}
+\end{equation*}
+The implication of above assumption is that:
 
+\begin{remark}
+    If many assets are available, we should expect $ \alpha_i $ typically to be very small in absolute value. This is the \textit{arbitrage pricing theory} of \cite{Ross_1976}.
+\end{remark}
 
+\textbf{Why?}
 
+Portfolio of $ N $ assets $ i $, the excess return on the portfolio will be
+\begin{equation*}
+    R_{p t}^e=\alpha_p+\beta_{p m} R_{m t}^e+\epsilon_{p t}
+\end{equation*}  
+where $ \alpha_p=\sum_{j=1}^N w_j \alpha_j, \beta_{p m}=\sum_{j=1}^N w_j \beta_{j m}, \text { and } \epsilon_{p t}=\sum_{j=1}^N w_j \epsilon_{j t} $. 
 
+The variance of $ \epsilon_{p t} $ will be 
+\begin{equation*}
+    \operatorname{Var}\left(\epsilon_{p t}\right)=\sum_{j=1}^N w_j^2 \operatorname{Var}\left(\epsilon_{j t}\right)
+\end{equation*}
+which will shrink rapidly with $ N $  provided that no single weight $ w_j $  is too large.
 
+Suppose that the portfolio has enough stocks, with a small enough weight in each one, that the residual risk $ \operatorname{Var}\left(\epsilon_{p t}\right) $ is negligible. We say that the portfolio is \textbf{well diversified}. For such a portfolio, we can neglect $ \epsilon_{p t} $ and write the excess return as
+\begin{equation*}
+    R_{p t}^e=\alpha_p+\beta_{p m} R_{m t}^e
+\end{equation*}
+But we must have $ \alpha_p  = 0 $. If not, there is an arbitrage opportunity: go short $ \beta_{pm} $ units of the market and go long on unit of portfolio $ p $, while funding all positions with riskless borrowing and lending. This delivers a riskless excess return of $ \alpha_p $.  
 
+\cite{Ross_1976} sda
 
 \chapter{The Stochastic Discount Factor}
 

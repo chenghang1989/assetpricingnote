@@ -246,3 +246,6 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 elegantbook-cn.tex
+.vscode/ltex.hiddenFalsePositives.en-US.txt
+.vscode/ltex.disabledRules.en-US.txt
+.vscode/ltex.disabledRules.en-US.txt
