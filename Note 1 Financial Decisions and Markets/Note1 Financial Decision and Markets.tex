@@ -258,7 +258,76 @@ Suppose that the portfolio has enough stocks, with a small enough weight in each
 \end{equation*}
 But we must have $ \alpha_p  = 0 $. If not, there is an arbitrage opportunity: go short $ \beta_{pm} $ units of the market and go long on unit of portfolio $ p $, while funding all positions with riskless borrowing and lending. This delivers a riskless excess return of $ \alpha_p $.  
 
-\cite{Ross_1976} sda
+\cite{Ross_1976} exploits this insight, showing that $ \alpha_p = 0 $ for all well-diversified portfolios implies that ``almost all'' individual assets have $ \alpha_i $ very close to zero. Technically, the result is that if idiosyncratic variance of individual assets are bounded above, then
+\begin{equation*}
+    \lim _{N \rightarrow \infty} \frac{1}{N} \sum_{i=1}^N \alpha_i^2=0
+\end{equation*}
+\begin{proof}
+    Consider forming an alpha-weighted portfolio by making dollar investment (this is the weight) of 
+    \begin{equation*}
+        \frac{\alpha_i}{\sqrt{N \sum_{i=1}^N \alpha_i^2}}
+    \end{equation*}
+    So the payoff on this portfolios is 
+    \begin{equation*}
+        \frac{\sum_{i=1}^N \alpha_i R_{i t}}{\sqrt{N \sum_{i=1}^N \alpha_i^2}}=\frac{\sum_{i=1}^N \alpha_i\left(R_{f t}+\alpha_i+\beta_{i m} R_{m t}^e+\epsilon_{i t}\right)}{\sqrt{N \sum_{i=1}^N \alpha_i^2}}
+    \end{equation*}
+    We make two additional assumption: 
+    \begin{enumerate}
+        \item \begin{equation*}
+            \lim _{N \rightarrow \infty} \frac{\sum_{i=1}^N \alpha_i}{\sqrt{N \sum_{i=1}^N \alpha_i^2}}=0
+        \end{equation*}
+        \item \begin{equation*}
+            \lim _{N \rightarrow \infty} \frac{\sum_{i=1}^N \alpha_i \beta_{i m}}{\sqrt{N \sum_{i=1}^N \alpha_i^2}}=0
+        \end{equation*}
+    \end{enumerate}
+    In other words, that as the number of assets increase ($ N \rightarrow \infty  $), the total initial dollar investment is zero, and the portfolio has a zero beta with market.
+
+    So the limiting payoff on the alpha-weighted portfolio has only 2 components:
+    \begin{equation}\label{equ:alpha-weighted portfolio}
+        \lim _{N \rightarrow \infty} \frac{\sum_{i=1}^N \alpha_i R_{i t}}{\sqrt{N \sum_{i=1}^N \alpha_i^2}}=\sqrt{\frac{\sum_{i=1}^N \alpha_i^2}{N}}+\frac{\sum_{i=1}^N \alpha_i \epsilon_{i t}}{\sqrt{N \sum_{i=1}^N \alpha_i^2}}
+    \end{equation}
+    The variance of the payoff in equation (\ref{equ:alpha-weighted portfolio}) is 
+    \begin{equation*}
+        \frac{\operatorname{Var}\left(\sum_{i=1}^N \alpha_i \epsilon_{i t}\right)}{N \sum_{i=1}^N \alpha_i^2}=\frac{\sum_{i=1}^N \alpha_i^2 \sigma_i^2}{N \sum_{i=1}^N \alpha_i^2} = 0
+    \end{equation*}
+    So the first term of equation (\ref{equ:alpha-weighted portfolio}) should equal to zero, which is 
+    \begin{equation*}
+        \lim _{N \rightarrow \infty} \frac{1}{N} \sum_{i=1}^N \alpha_i^2=0 
+    \end{equation*}
+\end{proof}
+
+\subsection{Multifactor Models}
+
+\section{Empirical Evidence}
+
+\subsection{Test Methodology}
+
+\subsubsection{Time-Series Approach}
+\begin{equation}\label{equ:capm-ts}
+    R_{i t}-R_{f t}=\alpha_i+\beta_{i m} (R_{m t}-R_{f t})+\epsilon_{i t}
+\end{equation}
+The null hypothesis is that $ \alpha = 0 $. 
+\begin{note}
+    The challenge is to test it jointly for a set of $ N $ assets.
+\end{note}
+
+\subsubsection{Cross-Section Approach}
+
+\subsubsection{Fama-MacBeth Approach}
+
+\subsection{The CAPM and the Cross-Section of Stock Returns}
+\begin{itemize}
+    \item $ \mathbf{\beta} $
+    \item \textbf{Size}  
+    \item \textbf{Value}
+    \item \textbf{Momentum}
+    \item \textbf{Post-event drift}
+    \item \textbf{Turnover and volatility}
+    \item \textbf{Insider trading}
+    \item \textbf{Growth of the firm}. Total asset growth
+    \item \textbf{Earning quality}
+    \item \textbf{Profitability}
+\end{itemize}
 
 \chapter{The Stochastic Discount Factor}
 

@@ -9,3 +9,4 @@ Sharpe-Lintner
 riskless
 undiversified
 Black-Litterman
+Fama-MacBeth
