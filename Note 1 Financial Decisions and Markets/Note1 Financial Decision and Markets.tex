@@ -168,7 +168,7 @@ the intercept $ \alpha_i $ should be $ 0 $ for all assets. $ \alpha_i $ is calle
 \subsection{Beta Pricing and Portfolio Choice}
 
 \begin{problem}
-    Assume that the Sharpe-Lintner CAPM holds, so the mean-variance efficient frontier consists of combinations of Treasury bills and the market portfolio. Nonetheless, some households make the mistake of holding undiversified portfolios that contain only one stock or a few stocks. (Empirical evidence on such behavior is discussed in Chapter 10.)
+    \textbf{Some Implications of the CAPM.} Assume that the Sharpe-Lintner CAPM holds, so the mean-variance efficient frontier consists of combinations of Treasury bills and the market portfolio. Nonetheless, some households make the mistake of holding undiversified portfolios that contain only one stock or a few stocks. (Empirical evidence on such behavior is discussed in Chapter 10.)
     \begin{enumerate}
         \item Show that the Sharpe ratio of any portfolio divided by the Sharpe ratio of the market
         portfolio equals the correlation of that portfolio with the market portfolio.
@@ -317,8 +317,14 @@ The null hypothesis is that $ \alpha = 0 $.
 
 \subsection{The CAPM and the Cross-Section of Stock Returns}
 \begin{itemize}
-    \item $ \mathbf{\beta} $
-    \item \textbf{Size}  
+    \item \textbf{Beta} 
+    \item \textbf{Size}  \cite{Banz1981} found that small market capitalization firms tend to have higher average return than their betas justify. But there are several reasons for ``size effect'' commanding less attention:
+    \begin{enumerate}
+        \item Large stocks outperformed small ones during the 1990s and part of 2000s.
+        \item \cite{Keim1983}, and \cite{Reinganum1983} point out that size effect was concentrated in January, which is a seasonal anomaly that began to disappear shortly after it was publicized.
+        \item Academic research preferred to normalize market capitalization by other measures of the scale of the firm.
+        \item However, \cite{Asness2018} found size effect still exist when controlling firm's quality.
+    \end{enumerate}
     \item \textbf{Value}
     \item \textbf{Momentum}
     \item \textbf{Post-event drift}
@@ -329,7 +335,63 @@ The null hypothesis is that $ \alpha = 0 $.
     \item \textbf{Profitability}
 \end{itemize}
 
+\section{Solution and Further Problems}
+
+\begin{problem}
+    \textbf{Appraisal Ratio.} Consider a frictionless one-period economy with multiple risky assets and a riskfree asset with return $R_f$. Let $R_p$ denote the return to the risky portfolio of an agent who trades
+    off the mean against the variance of his (total) portfolio return, $ \theta R_p + (1 - \theta) R_f $, where $\theta$ denotes the share of initial wealth invested in risky assets.
+
+    Suppose the investor is in the process of constructing his optimal portfolio and has a candidate or “benchmark” portfolio of risky assets with return $R_b$ that is optimal with respect to existing assets. But he becomes aware of a new investment opportunity (asset) with return $R_n$ and wishes to adjust his portfolio in order to take advantage of this new opportunity.
+
+    \begin{itemize}
+        \item Explain intuitively why a portfolio adjustment policy that uses the Sharpe ratio of the existing portfolio, $ SR_b = \mathbf{E}[R_b - R_f] / \sigma_b $, and the Sharpe ratio of the new investment, $ SR_n = \mathbf{E}[R_n - R_f] / \sigma_n $, as sufficient statistics for the adjustment is not optimal. Here, $ \sigma_b^2 = \text{Var}(R^b) $ and $ \sigma_n^2 = \text{Var}(R_n) $.
+        \item Let $\omega$ denote the optimal weight of the risky portfolio on the new asset, so that $ \omega R_n + (1 - \omega) R_b $. Explain why the agent chooses $\omega$ so as to maximize the Sharpe ratio of his risky portfolio, where the Sharpe ratio $ SR_p = \mathbf{E}[R_p - R_f] / \sigma_p$, with $ \sigma_p^2 = \text{Var}(R_p) $.  Show that
+        \begin{equation*}
+            w=\frac{\mathrm{E}\left[R_n-R_f\right] \sigma_b^2-\mathrm{E}\left[R_b-R_f\right] \sigma_{n b}}{\mathrm{E}\left[R_n-R_f\right] \sigma_b^2+\mathrm{E}\left[R_b-R_f\right] \sigma_n^2-\left(\mathrm{E}\left[R_n-R_f\right]+\mathrm{E}\left[R_b-R_f\right]\right) \sigma_{n b}}
+        \end{equation*}
+        where $ \sigma_{n b}=\operatorname{Cov}\left(R_n, R_b\right) $. 
+        \item  Suppose the investor believes that the return to the new asset is given by
+        \begin{equation*}
+            R_n-R_f=\alpha+\beta\left(R_b-R_f\right)+\varepsilon
+        \end{equation*}
+        where $ \alpha $ and $ \beta $ are constants, $ \varepsilon $ has mean zero and variance $ \sigma_{\varepsilon}^2 $, and $ \mathbf{E}[\varepsilon R_b] = 0 $.
+        \begin{enumerate}
+            \item Show that
+            \begin{equation*}
+                w=\frac{\bar{w}}{1+(1-\beta) \bar{w}}, \quad \text { where } \bar{w} \equiv \frac{\alpha / \sigma_{\varepsilon}^2}{\mathrm{E}\left[R_b-R_f\right] / \sigma_b^2}
+            \end{equation*}
+            Explain intuitively why $ \omega $  is increasing in $ \alpha $  and decreasing in $ \sigma_{\varepsilon}^2 $. Assuming $ \alpha $ > 0, why is it increasing in $ \beta $?
+            \item Show that
+            \begin{equation*}
+                S R_p^2=S R_b^2+A R_n^2
+            \end{equation*} 
+            where $ A R_n \equiv \alpha / \sigma_{\varepsilon} $ is the appraisal ratio of the new asset (\cite{Treynor_Black_1973}).
+
+            How is the appraisal ratio different from and how is it similar to the Sharpe ratio? Why is it that the former performance measure captures the improvement in portfolio efficiency due to the new investment? Why does the formula involve the square of the appraisal ratio? Does the implied formula for $ AR_n^2 $ remind you of a test statistic? Explain.
+        \end{enumerate} 
+        \item  The \cite{Treynor_Black_1973} model is a classic model of active portfolio management. The authors argue that portfolio construction should begin with a passive benchmark (the market portfolio), and investors with superior information about certain assets (nonzero perceived alphas) should adjust their exposure to these assets (the active part of their portfolio) based on a generalization of the simple algorithm discussed in part (b). How is this approach similar to the \cite{Black_Litterman_1992} model of portfolio construction?
+    \end{itemize}
+
+\end{problem}
+
+\begin{solution}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{solution}
+
 \chapter{The Stochastic Discount Factor}
+
+\chapter{Present Value Relations}
+\begin{introduction}
+    \item EMH
+\end{introduction}
+
+\section{Market Efficiency}
+
+\section{Present Value Models with Constant Discount Rates}
+
+
 
 
 \printbibliography[heading=bibintoc, title=\ebibname]

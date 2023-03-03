@@ -10,3 +10,6 @@ riskless
 undiversified
 Black-Litterman
 Fama-MacBeth
+Treynor
+Litterman
+EMH
