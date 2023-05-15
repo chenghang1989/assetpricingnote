@@ -6,7 +6,7 @@
 
 -------
 
-# 资产定价学术笔记：系列 2 Academic Notes for Asset Pricing: Series 1
+# 资产定价学术笔记：系列 2 Academic Notes for Asset Pricing: Series 2
 
 该笔记是资产定价学术笔记的系列 2. 
 
